@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WindAnvil candidate record v0",
+  "description": "Hypothesis/inventory lead only. Not a security finding.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "repository",
+    "accessibility_function",
+    "source",
+    "observed_at",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "repository": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "accessibility_function": {
+      "type": "string",
+      "minLength": 3
+    },
+    "source": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "const": "candidate"
+    },
+    "version_evidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "consumer_evidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reachability_evidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "consequence_evidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
